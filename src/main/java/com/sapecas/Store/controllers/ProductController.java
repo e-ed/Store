@@ -24,6 +24,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
+// TODO: AUMENTAR/DIMINUIR stockQuantity pela API
+
 @RestController
 @RequestMapping("/product")
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -48,6 +50,13 @@ public class ProductController {
     @GetMapping("/{productName}")
     public ResponseEntity<List<ProductModel>> findByName(@PathVariable String productName) {
         return ResponseEntity.status(HttpStatus.OK).body(productService.findByName(productName));
+    }
+    
+    @GetMapping("/findById/{id}")
+    public ResponseEntity<Object> findById(@PathVariable UUID id) {
+        Optional<ProductModel> product = productService.findById(id);
+        if (!product.isPresent()) return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not found");
+        return ResponseEntity.status(HttpStatus.OK).body(product);
     }
     
     @DeleteMapping("{id}")

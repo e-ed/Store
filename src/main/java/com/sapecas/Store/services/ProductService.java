@@ -12,6 +12,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
@@ -23,6 +24,7 @@ public class ProductService {
     @Autowired
     ProductRepository productRepository;
     
+    @Transactional
     public ProductModel save(ProductModel p) {
         return productRepository.save(p);
     }
@@ -39,6 +41,7 @@ public class ProductService {
         return productRepository.findById(id);
     }
 
+    @Transactional
     public void delete(ProductModel toBeDeleted) {
         productRepository.delete(toBeDeleted);
     }
