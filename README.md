@@ -33,7 +33,7 @@ GET /product/productName
 #### Get item with specific id
 
 ```http
-GET product/findById/id
+GET /product/findById/id
 ```
 
 | Parameter | Type     | Description                       |
