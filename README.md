@@ -58,11 +58,11 @@ Example:
 
 ```yaml 
 {
-    "productName": "productName",
-    "description": "description",
-    "category": "category",
+    "productName": "anime shirt",
+    "description": "a black shirt with akame from akame ga kill",
+    "category": "clothes",
     "price": 12.3,
-    "stockQuantity": 1
+    "stockQuantity": 1,
     "addedDate": "2023-01-11 01:01:01.000001"
 }
 ``` 
