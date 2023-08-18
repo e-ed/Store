@@ -52,7 +52,7 @@ POST /product
 #### Request body:
 JSON containing fields of the item being saved to the database: 
 
-String productName,  String description, String category, float price, int stockQuantity, LocalDateTime addedDate
+String productName,  String description, String category, float price, int stockQuantity
 
 Example:
 
@@ -62,8 +62,7 @@ Example:
     "description": "a black shirt with akame from akame ga kill",
     "category": "clothes",
     "price": 12.3,
-    "stockQuantity": 1,
-    "addedDate": "2023-01-11 01:01:01.000001"
+    "stockQuantity": 1
 }
 ``` 
 
