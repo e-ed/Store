@@ -10,7 +10,7 @@ Mappings:
 
 ## GET
 
-#### Get all items
+#### Get all items - returns all items stored in the Product table 
 
 ```http
 GET /product
@@ -18,7 +18,7 @@ GET /product
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| none| `none` | Returns all items stored in the Product table |
+| none| `none` | none|
 
 #### Get all items with specific name 
 
