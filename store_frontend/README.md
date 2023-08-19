@@ -35,4 +35,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Todo
 
-Adicionar o componente de table do shadcn
+- Adicionar o componente de table do shadcn
+- Colocar alert de erro caso ocorra um erro
+- Colocar máscara no preço enquanto o usuário digita
+- Update product
+  - Assim que a pessoa digitar o id, o sistema deve trazer todas as informações do produto, buscando pelo id digitado.

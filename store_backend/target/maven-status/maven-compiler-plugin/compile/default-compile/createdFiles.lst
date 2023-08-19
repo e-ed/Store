@@ -1,6 +1,0 @@
-com/sapecas/Store/DTO/ProductDTO.class
-com/sapecas/Store/models/ProductModel.class
-com/sapecas/Store/StoreApplication.class
-com/sapecas/Store/controllers/ProductController.class
-com/sapecas/Store/repositories/ProductRepository.class
-com/sapecas/Store/services/ProductService.class
