@@ -32,3 +32,12 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Todo
+
+- [x] Adicionar o componente de table do shadcn
+- [ ] Colocar as informações na tabela
+- [ ] Colocar alert de erro caso ocorra um erro
+- [ ] Colocar máscara no preço enquanto o usuário digita
+- [ ] Update product
+  - [ ] Assim que a pessoa digitar o id, o sistema deve trazer todas as informações do produto, buscando pelo id digitado.
