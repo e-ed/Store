@@ -1,0 +1,6 @@
+/home/lama/www/Store/store_backend/src/main/java/com/sapecas/Store/controllers/ProductController.java
+/home/lama/www/Store/store_backend/src/main/java/com/sapecas/Store/services/ProductService.java
+/home/lama/www/Store/store_backend/src/main/java/com/sapecas/Store/DTO/ProductDTO.java
+/home/lama/www/Store/store_backend/src/main/java/com/sapecas/Store/StoreApplication.java
+/home/lama/www/Store/store_backend/src/main/java/com/sapecas/Store/models/ProductModel.java
+/home/lama/www/Store/store_backend/src/main/java/com/sapecas/Store/repositories/ProductRepository.java
