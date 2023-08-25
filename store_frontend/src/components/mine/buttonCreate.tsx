@@ -14,14 +14,6 @@ import {
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 
-type Product = {
-  name: string;
-  description: string;
-  category: string;
-  price: number;
-  stockQuantity: number;
-};
-
 interface Props {
   showAlert: (value: boolean) => void;
   setMessage: (value: string) => void;
