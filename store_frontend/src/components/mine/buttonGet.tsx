@@ -1,3 +1,5 @@
+import { api } from "@/lib/axios";
+import { FormEvent, useState } from "react";
 import { Button } from "../ui/button";
 import {
   Dialog,
@@ -10,9 +12,57 @@ import {
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 
-export default function buttonGet() {
+interface Props {
+  showAlert: (value: boolean) => void;
+  setMessage: (value: string) => void;
+  showFoundProduct: (value: Product[]) => void;
+}
+
+export default function buttonGet({
+  setMessage,
+  showAlert,
+  showFoundProduct,
+}: Props) {
+  const [open, setOpen] = useState(false);
+  const [id, setId] = useState("");
+
+  async function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+
+    const idParsed = parseInt(id);
+
+    if (idParsed && idParsed == -1) {
+      try {
+        const result = await api.get("/product");
+        if (result) {
+          console.log(result.data);
+          showFoundProduct(result.data);
+
+          setOpen(false);
+        }
+      } catch (error) {
+        console.error(error);
+      } finally {
+        return;
+      }
+    } else {
+      try {
+        const result = await api.get(`/product/findById/${id}`);
+
+        if (result) {
+          console.log(result.data);
+          showFoundProduct([result.data]);
+
+          setOpen(false);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }
+
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button variant={"default"}>Get Product</Button>
       </DialogTrigger>
@@ -33,14 +83,25 @@ export default function buttonGet() {
                 name="id"
                 type="text"
                 placeholder="Ex.: 114b4623-b871-4518-a208-01e7b6ad91cb"
+                onChange={(d) => {
+                  setId(d.target.value);
+                }}
               />
             </div>
 
             <div className="flex justify-end gap-4">
-              <Button className="min-w-[80px] bg-red-600 hover:bg-red-800 text-white font-bold">
+              <Button
+                className="min-w-[80px] bg-red-600 hover:bg-red-800 text-white font-bold"
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
                 Cancel
               </Button>
-              <Button className="min-w-[80px] bg-green-600 hover:bg-green-800 text-white font-bold">
+              <Button
+                className="min-w-[80px] bg-green-600 hover:bg-green-800 text-white font-bold"
+                onClick={handleSubmit}
+              >
                 Get
               </Button>
             </div>
