@@ -3,6 +3,7 @@ package com.sapecas.Store.DTO;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import java.math.BigDecimal;
 
 
 public class ProductDTO {
@@ -33,11 +34,11 @@ public class ProductDTO {
         this.category = category;
     }
 
-    public float getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -55,7 +56,7 @@ public class ProductDTO {
     private String category;
     
     @NotNull
-    private float price;
+    private BigDecimal price;
     
     @NotNull
     private int stockQuantity;

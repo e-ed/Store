@@ -6,13 +6,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(name="Product")
-public class ProductModel implements Serializable{
+@Table(name="product")
+public class ProductModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,7 +28,7 @@ public class ProductModel implements Serializable{
     private String category;
     
     @Column(nullable=false)
-    private float price;
+    private BigDecimal price;
     
     @Column(nullable=false)
     private int stockQuantity;
@@ -68,11 +68,11 @@ public class ProductModel implements Serializable{
         this.category = category;
     }
 
-    public float getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
